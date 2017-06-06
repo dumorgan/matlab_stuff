@@ -4,19 +4,8 @@
 N = 256;
 s = randn(1, 256);
 
-x = filter(1, [1 -0.5 1 -0.25 0.25], s);
+x = filter(1, [1 -2.737 0.0941 -2.62752 0.9126], s);
 
-p = 4;
-
-arcoeffs = aryule(x, p);
-
-figure;
-plot(abs(fft(arcoeffs, N)));
-title('Espectro de potência estimado com p = 4');
-
-
-%%
-%Letra b
 N = 256;
 
 spectrums = zeros(20, N);
@@ -33,10 +22,12 @@ for i = 1:20
    hold on
 end
 title('Espectro de potencia ensemble com p = 4');
+print(strcat('D:\Documents\UFRJ\Tópicos Especiais em Circuitos e Instrumentação\Lista 7 - imagens\8.2-', num2str(p), '.jpg'), '-djpeg')
 
 figure;
 plot(mean(spectrums));
 title('Espectro de potencia medio com p = 4');
+print(strcat('D:\Documents\UFRJ\Tópicos Especiais em Circuitos e Instrumentação\Lista 7 - imagens\8.2-', num2str(p), 'm.jpg'), '-djpeg')
 
 p = 6;
 arcoeffs = zeros(p + 1);
@@ -50,10 +41,12 @@ for i = 1:20
    hold on
 end
 title('Espectro de potencia ensemble com p = 6');
+print(strcat('D:\Documents\UFRJ\Tópicos Especiais em Circuitos e Instrumentação\Lista 7 - imagens\8.2-', num2str(p), '.jpg'), '-djpeg')
 
 figure;
 plot(mean(spectrums));
 title('Espectro de potencia medio com p = 6');
+print(strcat('D:\Documents\UFRJ\Tópicos Especiais em Circuitos e Instrumentação\Lista 7 - imagens\8.2-', num2str(p), 'm.jpg'), '-djpeg')
 
 p = 8;
 arcoeffs = zeros(p + 1);
@@ -67,10 +60,12 @@ for i = 1:20
    hold on
 end
 title('Espectro de potencia ensemble com p = 8');
+print(strcat('D:\Documents\UFRJ\Tópicos Especiais em Circuitos e Instrumentação\Lista 7 - imagens\8.2-', num2str(p), '.jpg'), '-djpeg')
 
 figure;
 plot(mean(spectrums));
 title('Espectro de potencia medio com p = 8');
+print(strcat('D:\Documents\UFRJ\Tópicos Especiais em Circuitos e Instrumentação\Lista 7 - imagens\8.2-', num2str(p), 'm.jpg'), '-djpeg')
 
 p = 12;
 arcoeffs = zeros(p + 1);
@@ -84,10 +79,9 @@ for i = 1:20
    hold on
 end
 title('Espectro de potencia ensemble com p = 12');
+print(strcat('D:\Documents\UFRJ\Tópicos Especiais em Circuitos e Instrumentação\Lista 7 - imagens\8.2-', num2str(p), 'jpg'), '-djpeg')
 
 figure;
 plot(mean(spectrums));
 title('Espectro de potencia medio com p = 12');
-
-
-
+print(strcat('D:\Documents\UFRJ\Tópicos Especiais em Circuitos e Instrumentação\Lista 7 - imagens\8.2-', num2str(p), 'm.jpg'), '-djpeg')
