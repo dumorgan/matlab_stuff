@@ -10,10 +10,33 @@ omega3 = 1.2*pi;
 %gera o vetor x
 x = 2*exp(1i*omega) * (exp(1i*n*omega1) + exp(1i*n*omega2) + exp(1i*n*omega3)) + randn(1, N);
 
+rx = autocorr(x, 6) * var(x);
+Rx = toeplitz(rx);
+eigenvalues = eig(Rx);
+figure;
+stem(eigenvalues);
+title('Autocorrelação de tamanho 6');
 
-[v, d] = eig(Rx);
+print(strcat('D:\Documents\UFRJ\Tópicos Especiais em Circuitos e Instrumentação\Lista 7 - imagens\8.5a.jpg'), '-djpeg');
 
-eigValues = diag(d);
+rx = autocorr(x, 15) * var(x);
+Rx = toeplitz(rx);
+eigenvalues = eig(Rx);
+figure;
+stem(eigenvalues);
+title('Autocorrelação de tamanho 15');
+
+print(strcat('D:\Documents\UFRJ\Tópicos Especiais em Circuitos e Instrumentação\Lista 7 - imagens\8.5b15.jpg'), '-djpeg');
+
+rx = autocorr(x, 30) * var(x);
+Rx = toeplitz(rx);
+eigenvalues = eig(Rx);
+figure;
+stem(eigenvalues);
+title('Autocorrelação de tamanho 30');
+
+print(strcat('D:\Documents\UFRJ\Tópicos Especiais em Circuitos e Instrumentação\Lista 7 - imagens\8.5b30.jpg'), '-djpeg');
+
 
 
 
