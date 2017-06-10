@@ -12,10 +12,11 @@ spectrums = zeros(20, N);
 
 p = 4;
 arcoeffs = zeros(p + 1);
+
 figure;
 for i = 1:20
    s = randn(1, N);
-   x =  filter(1, [1 -0.5 1 -0.25 0.25], s);
+   x = filter(1, [1 -2.737 0.0941 -2.62752 0.9126], s);
    arcoeffs = aryule(x, p)';
    spectrums(i, :) = abs(fft(arcoeffs, N));
    plot(spectrums(i, :));
@@ -34,7 +35,7 @@ arcoeffs = zeros(p + 1);
 figure;
 for i = 1:20
    s = randn(1, N);
-   x =  filter(1, [1 -0.5 1 -0.25 0.25], s);
+x = filter(1, [1 -2.737 0.0941 -2.62752 0.9126], s);
    arcoeffs = aryule(x, p)';
    spectrums(i, :) = abs(fft(arcoeffs, N));
    plot(spectrums(i, :));
@@ -53,7 +54,7 @@ arcoeffs = zeros(p + 1);
 figure;
 for i = 1:20
    s = randn(1, N);
-   x =  filter(1, [1 -0.5 1 -0.25 0.25], s);
+x = filter(1, [1 -2.737 0.0941 -2.62752 0.9126], s);
    arcoeffs = aryule(x, p)';
    spectrums(i, :) = abs(fft(arcoeffs, N));
    plot(spectrums(i, :));
@@ -72,7 +73,7 @@ arcoeffs = zeros(p + 1);
 figure;
 for i = 1:20
    s = randn(1, N);
-   x =  filter(1, [1 -0.5 1 -0.25 0.25], s);
+x = filter(1, [1 -2.737 0.0941 -2.62752 0.9126], s);
    arcoeffs = aryule(x, p)';
    spectrums(i, :) = abs(fft(arcoeffs, N));
    plot(spectrums(i, :));
